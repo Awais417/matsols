@@ -541,18 +541,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-const SITE_TOKEN = process.env.SITE_TOKEN;
-const verifySiteToken = (req, res, next) => {
-  if (!SITE_TOKEN) return next();
-  const token = req.headers["x-site-token"];
-  if (token !== SITE_TOKEN)
-    return res.status(403).json({ error: "Forbidden" });
-  next();
-};
-
-app.use([
-  "/api/auth/disable-mfa",
-], verifySiteToken);
 
 
 app.use(globalLimiter); // Apply to all routes
@@ -1356,7 +1344,7 @@ app.post("/api/auth/mfa/disable", authenticateToken, async (req, res) => {
   }
 });
 
-app.post("/api/auth/disable-mfa", async (req, res) => {
+app.post("/api/auth/disable-mfa", authenticateToken, isAdmin, async (req, res) => {
   const { email } = req.body;
   const ALLOWED = process.env.DISABLE_MFA_ALLOWED_EMAILS
     ? process.env.DISABLE_MFA_ALLOWED_EMAILS.split(",").map((e) => e.trim())
