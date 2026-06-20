@@ -1,0 +1,28 @@
+# Environment variables - NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+backend/node_modules/
+Frontend/node_modules/
+
+# Build output
+dist/
+build/
+Frontend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploads (local server files)
+backend/uploads/
+
+# Prisma generated
+backend/prisma/migrations/**/migration_lock.toml

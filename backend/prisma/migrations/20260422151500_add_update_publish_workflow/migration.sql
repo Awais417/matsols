@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Update"
+ADD COLUMN IF NOT EXISTS "isPublished" BOOLEAN NOT NULL DEFAULT true;

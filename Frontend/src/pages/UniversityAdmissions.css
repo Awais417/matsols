@@ -1,0 +1,610 @@
+/* University Admissions Page Styles */
+
+.ua-page {
+  font-family: "Inter", sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.ua-page .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.ua-hero {
+  position: relative;
+  background-color: #0b1622;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ua-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.ua-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(4, 16, 33, 0.92), rgba(4, 16, 33, 0.7));
+  z-index: 1;
+}
+
+.ua-hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 140px 40px 100px;
+  text-align: center;
+}
+
+.ua-hero__title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+}
+
+.ua-hero__highlight {
+  color: #f4823c;
+  font-style: italic;
+}
+
+.ua-hero__desc {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 auto 40px auto;
+  max-width: 600px;
+}
+
+.ua-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 36px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f4823c;
+  color: #ffffff;
+  border: none;
+}
+
+.ua-hero__btn:hover {
+  background-color: #e5742e;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   WHAT WE DO SECTION
+   ======================================== */
+.ua-whatwedo {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.ua-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ua-section-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #041021;
+  margin-bottom: 16px;
+}
+
+.ua-section-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ua-whatwedo__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.ua-whatwedo__card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.ua-whatwedo__card:hover {
+  transform: translateY(-8px);
+}
+
+.ua-whatwedo__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ua-whatwedo__card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+.ua-whatwedo__card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ua-whatwedo__card-desc {
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 8px 0 0;
+}
+
+/* ========================================
+   WHY CHOOSE SECTION
+   ======================================== */
+.ua-whychoose {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+}
+
+.ua-whychoose__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ua-whychoose__left h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #041021;
+  margin-bottom: 16px;
+}
+
+.ua-whychoose__left p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.ua-whychoose__features {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ua-feature-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.ua-feature-item:hover {
+  transform: translateX(8px);
+}
+
+.ua-feature-icon {
+  width: 50px;
+  height: 50px;
+  background: #fff0e6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4823c;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.ua-feature-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #041021;
+  margin: 0 0 8px;
+}
+
+.ua-feature-content p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ========================================
+   ADMISSIONS PROCESS SECTION
+   ======================================== */
+.ua-process {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.ua-process__timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 60px;
+}
+
+.ua-process__timeline::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, #f4823c, #041021);
+  z-index: 0;
+}
+
+.ua-process__step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ua-process__icon {
+  width: 80px;
+  height: 80px;
+  background: #f4823c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 32px;
+  box-shadow: 0 8px 20px rgba(244, 130, 60, 0.3);
+}
+
+.ua-process__step:nth-child(even) .ua-process__icon {
+  background: #041021;
+  box-shadow: 0 8px 20px rgba(4, 16, 33, 0.3);
+}
+
+.ua-process__step h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #041021;
+  margin: 0 0 8px;
+}
+
+.ua-process__step p {
+  font-size: 14px;
+  color: #666;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   PARTNER UNIVERSITIES SECTION
+   ======================================== */
+.ua-partners {
+  padding: 100px 0;
+  background: #041021;
+  color: white;
+}
+
+.ua-partners .ua-section-title {
+  color: white;
+}
+
+.ua-partners .ua-section-subtitle {
+  color: rgba(255,255,255,0.7);
+}
+
+.ua-partners__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.ua-partner-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.ua-partner-card:hover {
+  transform: scale(1.03);
+}
+
+.ua-partner-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ua-partner-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+}
+
+.ua-partner-card__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+/* ========================================
+   SUCCESS STORIES SECTION
+   ======================================== */
+.ua-stories {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.ua-stories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.ua-story-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.ua-story-card:hover {
+  transform: translateY(-8px);
+}
+
+.ua-story-card__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  border: 4px solid #f4823c;
+}
+
+.ua-story-card__quote {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.ua-story-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #041021;
+  margin: 0;
+}
+
+.ua-story-card__uni {
+  font-size: 14px;
+  color: #f4823c;
+  margin: 4px 0 0;
+}
+
+/* ========================================
+   FAQ SECTION
+   ======================================== */
+.ua-faq {
+  padding: 100px 0;
+  background: #041021;
+  color: white;
+}
+
+.ua-faq .ua-section-title {
+  color: white;
+}
+
+.ua-faq__container {
+  max-width: 800px;
+  margin: 60px auto 0;
+}
+
+.ua-faq-item {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.ua-faq-item.active {
+  border-color: #f4823c;
+}
+
+.ua-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.ua-faq-question svg {
+  transition: transform 0.3s ease;
+}
+
+.ua-faq-item.active .ua-faq-question svg {
+  transform: rotate(180deg);
+}
+
+.ua-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.ua-faq-item.active .ua-faq-answer {
+  max-height: 200px;
+}
+
+.ua-faq-answer p {
+  padding: 0 24px 20px;
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ========================================
+   FINAL CTA SECTION
+   ======================================== */
+.ua-cta {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f4823c 0%, #e06520 100%);
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.ua-cta__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ua-cta h2 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.ua-cta p {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.ua-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  background: #041021;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.ua-cta__btn:hover {
+  background: #0a1f35;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+@media (max-width: 1024px) {
+  .ua-whatwedo__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ua-partners__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ua-whychoose__content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ua-hero {
+    min-height: 100vh;
+  }
+  
+  .ua-hero__title {
+    font-size: 36px;
+  }
+  
+  .ua-hero__inner {
+    padding: 120px 20px 80px;
+  }
+  
+  .ua-section-title {
+    font-size: 32px;
+  }
+  
+  .ua-whatwedo__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .ua-process__timeline {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .ua-process__timeline::before {
+    display: none;
+  }
+  
+  .ua-partners__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 60px auto 0;
+  }
+  
+  .ua-stories__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 60px auto 0;
+  }
+  
+  .ua-cta h2 {
+    font-size: 28px;
+  }
+}

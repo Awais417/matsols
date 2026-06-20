@@ -1,0 +1,262 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Degree {
+  id                    String   @id @default(uuid())
+  name                  String
+  code                  String?
+  about                 String?
+  keyInformation        String?
+  overview              String?
+  structure             String?
+  admissionRequirements String?
+  fees                  String?
+  scholarships          String?
+  visaInfo              String?
+  workPermit            String?
+  tuitionFee            String?
+  duration              String?
+  applyDate             String?
+  intake               String?
+  applicationDeadline   String?
+  campusLocation        String?
+  taughtIn              String?
+  universityAffiliation String?
+  progression           String?
+  faqs                  String?
+  slug                  String   @unique
+  level                 String?
+  universityId          String?
+  university            University? @relation(fields: [universityId], references: [id])
+  scholarshipsData      Scholarship[]
+  additionalInfo        String?    // JSON string for extra details
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model Lead {
+  id            String   @id @default(uuid())
+  fullName      String
+  email         String
+  phone         String?
+  citizenship   String?
+  targetCountry String?
+  status        String   @default("New")
+  priority      String   @default("med")
+  programInterest String?
+  gpa           String?
+  lastQualification String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ChatMessage {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  role      String   // "user" or "agent"
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Update {
+  id        String   @id @default(uuid())
+  title     String
+  category  String
+  date      String
+  excerpt   String
+  image     String?
+  isPublished Boolean @default(true)
+  isImportant Boolean @default(false)
+  expiryDate  DateTime?
+  ctaText     String?
+  ctaLink     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String   @default("STUDENT")
+  fullName  String?
+  phone     String?
+  bio       String?
+  location  String?
+  avatar    String?
+  
+  // Security Fields
+  mfaEnabled          Boolean   @default(false)
+  mfaSecret           String?
+  recoveryCodes       String[]  @default([])
+  failedLoginAttempts Int       @default(0)
+  lockoutUntil        DateTime?
+  lastLoginAt         DateTime?
+  lastLoginIp         String?
+
+  applications Application[]
+  documents    Document[]
+  chatMessages ChatMessage[]
+  assignedPublicChatSessions PublicChatSession[]
+  actions      DashboardAction[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id           String   @id @default(uuid())
+  userId       String?
+  action       String   // e.g. "LOGIN_SUCCESS", "LOGIN_FAILED", "PASSWORD_RESET", "UNIVERSITY_DELETE"
+  details      String?  // JSON or text description
+  ipAddress    String?
+  userAgent    String?
+  createdAt    DateTime @default(now())
+}
+
+model DashboardAction {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  title       String
+  description String?
+  type        String   @default("task") // task, upload, info
+  link        String?
+  isCompleted Boolean  @default(false)
+  priority    String   @default("med") // high, med, low
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Application {
+  id           String   @id @default(uuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  universityId String
+  university   University @relation(fields: [universityId], references: [id])
+  courseName   String
+  status       String   @default("Submitted") // Submitted, Documents Verified, Under Review, Offer Decision, Visa Process
+  step         Int      @default(1)
+  appliedDate  DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Document {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  name      String
+  type      String   // PDF, Image, DOCX
+  size      String
+  url       String?  // URL to the file
+  status    String   @default("New") // New, Pending Review, Verified, Rejected
+  uploadedAt DateTime @default(now())
+}
+
+model University {
+  id        String   @id @default(uuid())
+  name      String
+  country   String
+  image      String?
+  websiteUrl String?
+  description String?
+  about       String?
+  campusLife  String?
+  admissionCriteria String?
+  rank        String?
+  location    String?
+  status     String   @default("Active") // Active, Under Review, Inactive
+  degrees    Degree[]
+  scholarshipsData Scholarship[]
+  additionalInfo String?    // JSON string for extra details
+  applications Application[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Scholarship {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  amount      String?
+  eligibility String?
+  deadline    String?
+  image       String?
+  ctaLink     String?
+  status      String   @default("Active")
+  additionalInfo String?
+  universityId String?
+  degreeId     String?
+  university   University? @relation(fields: [universityId], references: [id])
+  degree       Degree?     @relation(fields: [degreeId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model SystemSetting {
+  id                      String   @id @default("singleton")
+  supportEmail            String   @default("support@matsols.com")
+  supportPhone            String   @default("")
+  brandName               String   @default("MATSOLS")
+  logoUrl                 String   @default("")
+  primaryColor            String   @default("#ff863c")
+  secondaryColor          String   @default("#0f172a")
+  notificationsEnabled    Boolean  @default(true)
+  notificationSenderName  String   @default("MATSOLS")
+  notificationSenderEmail String   @default("support@matsols.com")
+  smtpHost                String   @default("")
+  smtpPort                String   @default("587")
+  smtpUsername            String   @default("")
+  smtpPassword            String   @default("")
+  aiApiKey                String   @default("")
+  aiModel                 String   @default("gpt-4o-mini")
+  aiTemperature           Float    @default(0.4)
+  aiMaxTokens             Int      @default(350)
+  aiSystemPrompt          String   @default("")
+  aiKnowledgeBaseNotes    String   @default("")
+  aiHandoffEnabled        Boolean  @default(true)
+  aiChatLimit             Int      @default(30)
+  officeAddress           String   @default("Birmingham, United Kingdom")
+  applicationPackages     String   @default("")
+  staffInfo               String   @default("")
+  emailApiKey             String   @default("")
+  webhookUrl              String   @default("")
+  webhookSecret           String   @default("")
+  updatedAt               DateTime @updatedAt
+}
+
+model PublicChatSession {
+  id               String   @id @default(uuid())
+  visitorToken     String   @unique
+  fullName         String
+  email            String
+  phone            String
+  country          String
+  programInterest  String
+  gpa              String?
+  lastQualification String?
+  status           String   @default("AI_ACTIVE") // AI_ACTIVE, WAITING_AGENT, AGENT_ACTIVE, ENDED
+  handoffRequestedAt DateTime?
+  estimatedReplyMin Int?
+  estimatedReplyMax Int?
+  assignedAgentId  String?
+  assignedAgent    User?    @relation(fields: [assignedAgentId], references: [id])
+  messages         PublicChatMessage[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model PublicChatMessage {
+  id        String   @id @default(uuid())
+  sessionId String
+  session   PublicChatSession @relation(fields: [sessionId], references: [id])
+  senderType String  // user, ai, agent, system
+  content   String
+  createdAt DateTime @default(now())
+}

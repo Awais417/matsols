@@ -1,0 +1,527 @@
+/* Visa Support Page Styles */
+
+.vs-page {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: #041021;
+}
+
+.vs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+    .vs-container {
+        padding: 20px !important;
+    }
+}
+
+.vs-section-title {
+    text-align: center;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+/* Hero Section */
+.vs-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.vs-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.vs-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(4, 16, 33, 0.9), rgba(4, 16, 33, 0.7));
+  z-index: 1;
+}
+
+.vs-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.vs-hero__title {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.vs-hero__title span {
+  color: #f4823c;
+}
+
+.vs-hero__subtitle {
+  font-size: clamp(16px, 2.5vw, 24px);
+  opacity: 0.9;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.vs-hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* We Assist With */
+.vs-assist {
+    padding: 100px 0;
+    background-color: #f4823c;
+    color: white;
+}
+
+.vs-assist__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.vs-assist__image img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.vs-assist__content h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.vs-assist__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vs-assist-card {
+    background: white;
+    color: #041021;
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.vs-assist-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #f4823c;
+}
+
+.vs-assist-card p {
+    font-size: 15px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* Why Professional Support */
+.vs-why {
+    padding: 100px 0;
+    background-color: #041021;
+    color: white;
+}
+
+.vs-why__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.vs-why-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 350px;
+}
+
+.vs-why-img-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.vs-why-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.vs-why-card:hover .vs-why-img-wrap img {
+    transform: scale(1.1);
+}
+
+.vs-why-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.vs-why-info h3 {
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 700;
+}
+
+/* Documentation Checklist */
+.vs-checklist {
+    padding: 100px 0;
+    background-color: #f4823c;
+    color: white;
+}
+
+.vs-checklist__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.vs-checklist-card {
+    background: white;
+    color: #041021;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.vs-checklist-card:hover {
+    transform: translateY(-10px);
+}
+
+.vs-checklist-card iconify-icon {
+    color: #f4823c;
+    margin-bottom: 20px;
+}
+
+.vs-checklist-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.vs-checklist-card p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Our Process */
+.vs-process {
+    padding: 100px 0;
+    background-color: #f0f4ff;
+}
+
+.vs-process__grid {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.vs-process-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.vs-p-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    padding: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vs-p-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vs-process-step span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Privacy */
+.vs-privacy {
+    padding: 100px 0;
+    background-color: #041021;
+    color: white;
+    text-align: center;
+}
+
+.vs-privacy h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    margin: 24px 0 16px;
+}
+
+.vs-privacy p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    opacity: 0.7;
+    font-size: 18px;
+}
+
+.vs-privacy__meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.vs-privacy__meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.vs-privacy__meta span::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #f4823c;
+    border-radius: 50%;
+}
+
+/* Success Stories */
+.vs-stories {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.vs-stories__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.vs-story-card {
+    padding: 40px;
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+}
+
+.vs-story-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.vs-s-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.vs-s-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vs-s-info h4 {
+    font-weight: 700;
+    margin: 0;
+}
+
+.vs-s-info span {
+    font-size: 13px;
+    color: #f4823c;
+}
+
+/* FAQ Accordion */
+.vs-faq {
+    padding: 100px 0;
+    background-color: #041021;
+}
+
+.vs-faq__list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vs-faq-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Hardened visibility for active items to override anim-hidden issues */
+.vs-faq-item.active {
+    background: rgba(255,255,255,0.1) !important;
+    opacity: 1 !important;
+}
+
+.vs-faq-item.active .vs-faq-question {
+    color: var(--primary-orange);
+}
+
+.vs-faq-question {
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+}
+
+.vs-faq-answer-wrapper {
+    will-change: height, opacity;
+}
+
+.vs-faq-answer {
+    padding: 0 30px 24px;
+    color: rgba(255,255,255,0.7);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.vs-cta {
+    padding: 100px 0;
+    background-color: #f4823c;
+    color: white;
+}
+
+.vs-cta__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.vs-cta__img img {
+    width: 600px;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.vs-cta__content h2 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.vs-cta__content p {
+    font-size: 19px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.vs-cta__btns {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-dark {
+    background-color: #041021;
+    color: white;
+}
+
+.vs-page .btn-outline-white {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+}
+
+.vs-page .btn-outline-white:hover {
+    background: #ffffff;
+    color: #041021;
+    border-color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .vs-assist__grid, .vs-why__grid, .vs-stories__grid, .vs-cta__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        justify-items: center;
+        text-align: center;
+    }
+    .vs-checklist__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .vs-process__grid {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .vs-cta__img img {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vs-process__grid {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .vs-hero {
+        height: 100vh;
+    }
+    .vs-hero__actions, .vs-cta__btns {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .btn { width: 100%; max-width: 320px; }
+    .vs-privacy {
+        text-align: left;
+    }
+    .vs-privacy p {
+        margin-left: 0;
+    }
+    .vs-privacy__meta {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        text-align: left;
+    }
+}

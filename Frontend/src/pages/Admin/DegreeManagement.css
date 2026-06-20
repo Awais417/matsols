@@ -1,0 +1,718 @@
+.degree-modal {
+  max-width: min(1120px, calc(100vw - 48px));
+  width: 100%;
+}
+
+.degree-sticky-close {
+  position: sticky;
+  top: 6px;
+  z-index: 5;
+  background: #0f172a !important;
+  border: 1px solid #1e293b !important;
+  color: #ffffff !important;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.22);
+}
+
+.degree-sticky-close:hover {
+  background: #ff863c !important;
+  border-color: #ff863c !important;
+  color: #ffffff !important;
+}
+
+.degree-sticky-close iconify-icon {
+  font-size: 18px;
+}
+
+.degree-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.degree-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 20px 22px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 134, 60, 0.12), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #f3f7fb 100%);
+}
+
+.degree-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid #dbe4ef;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+.degree-breadcrumb-btn {
+  border: 1px solid #d7e1ec;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  color: #475569;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.05);
+  transition: all 0.18s ease;
+}
+
+.degree-breadcrumb-btn:hover {
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+.degree-breadcrumb-btn.active {
+  border-color: #ff863c;
+  background: linear-gradient(180deg, #fff7ed 0%, #ffe7d2 100%);
+  color: #9a3412;
+  box-shadow: 0 12px 22px rgba(255, 134, 60, 0.18);
+}
+
+.degree-step-panel {
+  padding: 0 0 6px;
+}
+
+.degree-step-shell {
+  border: 1px solid #dbe4ef;
+  border-radius: 22px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 251, 255, 0.98) 100%);
+  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.08);
+}
+
+.degree-step-meta {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.degree-step-index {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  background: #e0f2fe;
+  color: #0c4a6e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.degree-step-meta h4 {
+  margin: 0 0 6px;
+  color: #0f172a;
+  font-size: 22px;
+}
+
+.degree-step-meta p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.degree-step-panel .admin-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.degree-step-panel .form-group {
+  min-width: 0;
+}
+
+.degree-field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.degree-field-block {
+  margin-bottom: 18px;
+}
+
+.degree-step-panel .ai-input {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1px solid #d7e1ec;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 24px rgba(15, 23, 42, 0.05);
+  color: #0f172a !important;
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.degree-step-panel .ai-input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.degree-step-panel .ai-input:focus {
+  outline: none;
+  border-color: rgba(255, 134, 60, 0.7);
+  box-shadow: 0 0 0 4px rgba(255, 134, 60, 0.12), 0 14px 30px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.degree-rich-editor .ql-toolbar {
+  border-radius: 14px 14px 0 0;
+  border: 1px solid #d7e1ec;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  padding: 6px 8px;
+}
+
+.degree-rich-editor .ql-container {
+  border-radius: 0 0 14px 14px;
+  border: 1px solid #d7e1ec;
+  border-top: none;
+  min-height: 160px;
+  font-size: 14px;
+  color: #0f172a;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+}
+
+.degree-rich-editor .ql-editor {
+  min-height: 140px;
+  line-height: 1.7;
+}
+
+.degree-rich-editor .ql-toolbar button:hover,
+.degree-rich-editor .ql-toolbar .ql-picker-label:hover {
+  color: #ff863c;
+}
+
+.degree-rich-editor .ql-toolbar button.ql-active,
+.degree-rich-editor .ql-toolbar .ql-picker-label.ql-active,
+.degree-rich-editor .ql-toolbar .ql-picker-item.ql-selected {
+  color: #ff863c;
+}
+
+.degree-specs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.degree-add-field-btn {
+  font-size: 12px;
+  padding: 9px 12px;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.18);
+}
+
+.degree-spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #f8fbff;
+  align-items: center;
+}
+
+.degree-faq-row {
+  border: 1px solid #dbe4ef;
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+}
+
+.degree-faq-row .ai-input {
+  width: 100%;
+}
+
+.degree-faq-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.degree-remove-field-btn {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.14);
+  cursor: pointer;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.degree-modal-actions {
+  border-top: 1px solid #e2e8f0;
+  padding: 12px 20px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.2fr;
+  gap: 10px;
+  background: #fff;
+}
+
+.degree-form-error {
+  margin: 0 20px 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.degree-step-btn,
+.degree-submit-btn {
+  width: 100%;
+  padding: 12px;
+  min-height: 48px;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.degree-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.degree-step-btn {
+  color: #334155;
+  border-color: #cbd5e1;
+  background: #fff;
+}
+
+.degree-step-btn:hover {
+  color: #0f172a;
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.degree-close-btn {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.degree-submit-btn {
+  border: none;
+  background: #0f172a;
+  color: #fff;
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.16);
+}
+
+.degree-toolbar {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: end;
+}
+
+.degree-toolbar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.degree-toolbar-search {
+  min-width: 0;
+}
+
+.degree-toolbar-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #334155;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.degree-toolbar-input {
+  min-height: 46px;
+  border-radius: 14px;
+  border: 1px solid #dbe4ef;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  color: #0f172a !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.degree-select-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 42px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+.degree-action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0;
+}
+
+.degree-action-view {
+  color: #0f172a;
+}
+
+.degree-action-edit {
+  color: #0891b2;
+}
+
+.degree-action-delete {
+  color: #ef4444;
+}
+
+.degree-pagination {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.degree-pagination-meta,
+.degree-page-indicator {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.degree-pagination-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.degree-page-btn {
+  min-width: 110px;
+}
+
+.degree-detail-modal {
+  max-width: min(1080px, calc(100vw - 48px));
+  width: 100%;
+}
+
+.degree-detail-body {
+  padding: 20px;
+  max-height: 78vh;
+  overflow-y: auto;
+}
+
+.degree-detail-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 18px;
+}
+
+.degree-detail-hero h2 {
+  margin: 0 0 8px;
+  color: #0f172a;
+}
+
+.degree-detail-hero p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.degree-detail-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.degree-detail-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.degree-detail-chip-muted {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.degree-detail-edit-btn {
+  border: none;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.degree-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.degree-detail-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+  margin-bottom: 16px;
+}
+
+.degree-detail-card h4 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.degree-detail-kv {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 14px;
+}
+
+.degree-detail-kv:last-child {
+  border-bottom: none;
+}
+
+.degree-detail-kv span {
+  color: #64748b;
+}
+
+.degree-detail-kv strong {
+  color: #0f172a;
+  text-align: right;
+}
+
+.degree-detail-richtext {
+  color: #334155;
+  line-height: 1.7;
+}
+
+.degree-detail-richtext p:first-child {
+  margin-top: 0;
+}
+
+.degree-detail-richtext p:last-child {
+  margin-bottom: 0;
+}
+
+.degree-detail-specs {
+  display: grid;
+  gap: 10px;
+}
+
+.degree-detail-spec-item {
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.degree-detail-spec-item span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.degree-detail-spec-item strong {
+  color: #0f172a;
+  text-align: right;
+}
+
+.degree-detail-faqs {
+  display: grid;
+  gap: 12px;
+}
+
+.degree-detail-faq-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  background: #f8fafc;
+}
+
+.degree-detail-faq-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.degree-detail-empty {
+  margin: 0;
+  color: #64748b;
+}
+
+.degree-delete-modal {
+  width: 100%;
+  max-width: 440px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.22);
+  text-align: center;
+}
+
+.degree-delete-modal-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  font-size: 28px;
+}
+
+.degree-delete-modal h3 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: 22px;
+}
+
+.degree-delete-modal p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.degree-delete-modal-actions {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.degree-delete-confirm-btn {
+  border: none;
+  border-radius: 12px;
+  background: #dc2626;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 12px 16px;
+}
+
+@media (max-width: 900px) {
+  .degree-modal {
+    max-width: calc(100vw - 20px);
+  }
+
+  .degree-step-shell {
+    padding: 18px;
+  }
+
+  .degree-step-panel .admin-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .degree-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .degree-spec-row {
+    grid-template-columns: 1fr;
+  }
+
+  .degree-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .degree-pagination {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .degree-pagination-actions {
+    justify-content: space-between;
+  }
+
+  .degree-detail-modal {
+    max-width: calc(100vw - 20px);
+  }
+
+  .degree-detail-hero,
+  .degree-detail-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .degree-detail-hero {
+    gap: 14px;
+  }
+
+  .degree-detail-edit-btn {
+    width: 100%;
+  }
+
+  .degree-detail-spec-item,
+  .degree-detail-kv {
+    flex-direction: column;
+  }
+
+  .degree-delete-modal-actions {
+    grid-template-columns: 1fr;
+  }
+}

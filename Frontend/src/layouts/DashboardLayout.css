@@ -1,0 +1,263 @@
+/* Dashboard Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fc;
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+}
+
+/* Sidebar */
+.dash-sidebar {
+  width: 280px;
+  background: white;
+  border-right: 1px solid #e0e3ea;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-logo {
+  padding: 30px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue, #041021);
+  text-decoration: none;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sidebar-logo svg {
+  width: 28px;
+  height: 28px;
+}
+
+.sidebar-nav {
+  padding: 24px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  color: #64748b;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #f1f5f9;
+  color: var(--primary-blue, #041021);
+}
+
+.nav-item.active {
+  background: rgba(255, 134, 60, 0.1);
+  color: var(--primary-orange, #ff863c);
+  font-weight: 600;
+}
+
+.nav-item iconify-icon {
+  font-size: 20px;
+}
+
+.sidebar-user {
+  padding: 24px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid #e0e3ea;
+  color: #64748b;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-logout:hover {
+  background: #fff1f2;
+  border-color: #fee2e2;
+  color: #ef4444; /* Red for logout */
+}
+
+/* Main Content */
+.dash-main {
+  flex: 1;
+  margin-left: 280px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Allow flex to shrink if needed */
+  overflow-x: hidden;
+}
+
+.dash-header {
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid #e0e3ea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e0e3ea;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn-icon:hover {
+  background: #f8f9fc;
+  color: var(--primary-blue, #041021);
+}
+
+.badge-dot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.dash-content {
+  padding: 40px;
+  flex: 1;
+}
+
+/* Mobile Responsiveness */
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .dash-sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .dash-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .dash-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dash-header {
+    padding: 0 20px;
+  }
+
+  .dash-content {
+    padding: 24px 20px;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    margin-right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #1a1a1a;
+    cursor: pointer;
+  }
+  
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 45;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  
+  .menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
