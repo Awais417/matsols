@@ -1458,14 +1458,12 @@ const leadLimiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   limit: 5,
   message: { error: "Too many submissions. Please try again later." },
-  keyGenerator: (req) => req.ip,
 });
 
 const chatSessionLimiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   limit: 10,
   message: { error: "Too many chat sessions. Please try again later." },
-  keyGenerator: (req) => req.ip,
 });
 
 const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(e));
