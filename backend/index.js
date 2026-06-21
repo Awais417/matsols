@@ -3222,6 +3222,15 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("[FATAL] Unhandled promise rejection:", reason);
+});
+
+process.on("uncaughtException", (error) => {
+  console.error("[FATAL] Uncaught exception:", error);
+  process.exit(1);
+});
+
 app.listen(PORT, () => {
   console.log(`🚀 Backend server running on http://localhost:${PORT}`);
   cleanupExpiredUpdates();
