@@ -525,6 +525,10 @@ const ALLOWED_ORIGINS = [
   "https://matsol.tech",
   "http://localhost:5173",
   "http://localhost:3000",
+  "http://52.86.10.251:3000",
+  "https://52.86.10.251:3000",
+  "http://52.86.10.251",
+  "https://52.86.10.251",
 ];
 
 app.set("trust proxy", 1);
