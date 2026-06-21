@@ -6,7 +6,7 @@ import { degreesData } from "../data/degreesData";
 const API_BASE_URL =
   ["localhost", "127.0.0.1"].includes(window.location.hostname)
     ? "http://localhost:5000/api"
-    : "https://matsol.tech/api";
+    : "https://52.86.10.251/api";
 
 const SITE_TOKEN = import.meta.env.VITE_SITE_TOKEN || "";
 
