@@ -67,7 +67,7 @@ const LeadManagement = () => {
     try {
       const data = await apiService.getAdminChatQueue();
       setChatQueue(data || []);
-      if (!selectedSessionId && data?.length) setSelectedSessionId(data[0].id);
+      setSelectedSessionId(prev => (!prev && data?.length) ? data[0].id : prev);
     } catch (err) {
       setError("Failed to load chat queue.");
     } finally {
