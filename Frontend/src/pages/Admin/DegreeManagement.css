@@ -366,6 +366,7 @@
 
 .degree-toolbar-input {
   min-height: 46px;
+  padding: 10px 14px;
   border-radius: 14px;
   border: 1px solid #dbe4ef;
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);

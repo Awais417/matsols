@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { apiService } from "../../services/api";
 import { useAuth } from "../../context/AuthContext";
@@ -49,6 +49,8 @@ const LeadManagement = () => {
   const [staffAgents, setStaffAgents] = useState([]);
   const [assignAgentId, setAssignAgentId] = useState("");
   const { user } = useAuth();
+  const messagesContainerRef = useRef(null);
+  const isAtBottomRef = useRef(true);
 
   const fetchLeads = async () => {
     try {
@@ -107,6 +109,29 @@ const LeadManagement = () => {
     if (!selectedSession) return;
     setAssignAgentId(selectedSession.assignedAgentId || "");
   }, [selectedSession]);
+
+  // Reset scroll to bottom when switching chats
+  useEffect(() => {
+    const el = messagesContainerRef.current;
+    if (!el) return;
+    el.scrollTop = el.scrollHeight;
+    isAtBottomRef.current = true;
+  }, [selectedSessionId]);
+
+  // Auto-scroll on new messages only if user was already at the bottom
+  useEffect(() => {
+    const el = messagesContainerRef.current;
+    if (!el || !selectedSession?.messages) return;
+    if (isAtBottomRef.current) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [selectedSession?.messages?.length]);
+
+  const handleMessagesScroll = () => {
+    const el = messagesContainerRef.current;
+    if (!el) return;
+    isAtBottomRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+  };
 
   const handleAddLead = async (e) => {
     e.preventDefault();
@@ -284,7 +309,7 @@ const LeadManagement = () => {
                     onChange={(e) => setMsgSearch(e.target.value)}
                   />
                 </div>
-                <div className="chatq-messages">
+                <div className="chatq-messages" ref={messagesContainerRef} onScroll={handleMessagesScroll}>
                   {(selectedSession.messages || [])
                     .filter(msg => !msgSearch || msg.content?.toLowerCase().includes(msgSearch.toLowerCase()))
                     .map((msg) => (
