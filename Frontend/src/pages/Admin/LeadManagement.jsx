@@ -220,7 +220,7 @@ const LeadManagement = () => {
         <div className="chatq-layout">
           <div className="admin-chart-card chatq-list-card">
             {chatQueue.length === 0 ? <p className="chatq-muted">No active chat requests.</p> : chatQueue.map((session) => (
-              <button key={session.id} onClick={() => { setSelectedSessionId(session.id); setMsgSearch(""); }} className={`chatq-list-item ${selectedSessionId === session.id ? "active" : ""}`}>
+              <button key={session.id} onClick={() => { setSelectedSession(null); setSelectedSessionId(session.id); setMsgSearch(""); }} className={`chatq-list-item ${selectedSessionId === session.id ? "active" : ""}`}>
                 <div className="chatq-item-head">
                   <div className="chatq-item-name">
                     {session.fullName}
