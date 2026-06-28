@@ -105,8 +105,7 @@ const Footer = () => {
         <div className="footer-bottom">
           Copyright © 2026 {brandName}. Built for Excellence.
           <span className="footer-built-by">
-            {" "}Developed by{" "}
-            <a href="https://www.aurexone.com" target="_blank" rel="noreferrer">AurexOne</a>
+            {" "}Certyfy^Me
           </span>
         </div>
       </div>

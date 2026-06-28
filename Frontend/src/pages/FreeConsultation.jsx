@@ -798,7 +798,7 @@ const FreeConsultation = ({ embedded = false, onRequestClose = null }) => {
       </div>
 
       <div className="consultation-footer">
-        Developed by <a href="https://aurexone.com/" target="_blank" rel="noopener noreferrer">AurexOne</a>
+        Certyfy^Me
       </div>
 
       {showCloseConfirm && (
